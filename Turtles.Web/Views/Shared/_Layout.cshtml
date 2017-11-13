@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtles</title>
+   
+
+    <style type="text/css">
+          body {
+              padding-top: 50px;
+              padding-bottom: 20px;
+          }
+
+          /* Set padding to keep content from hitting the edges */
+          .body-content {
+              padding-left: 15px;
+              padding-right: 15px;
+          }
+
+          /* Override the default bootstrap behavior where horizontal description lists
+        will truncate terms that are too long to fit in the left column */
+          .dl-horizontal dt {
+              white-space: normal;
+          }
+
+          /* Set width on the form input elements since they're 100% wide by default */
+          input,
+          select,
+          textarea {
+              max-width: 280px;
+          }
+
+          .main-image {
+              max-width: 100%;
+          }
+
+          p {
+              font-size:1.5em;
+          }
+    </style>
+    @Styles.Render("~/content/css")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("All About Turtles", "Index", "Home", new { area = "" },
+               new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/scripts/js")
+</body>
+</html>
